@@ -25,7 +25,7 @@ module.exports = function (app) {
     app.get("/api/posts/category/:category", function (req, res) {
         // Add sequelize code to find all posts where the category is equal to req.params.category,
         // return the result to the user with res.json
-        db.findAll({
+        db.Post.findAll({
             where: {
                 category: req.params.category
             }
@@ -38,7 +38,7 @@ module.exports = function (app) {
     app.get("/api/posts/:id", function (req, res) {
         // Add sequelize code to find a single post where the id is equal to req.params.id,
         // return the result to the user with res.json
-        db.findOne({
+        db.Post.findOne({
             where: {
                 id: req.params.id
             }
@@ -51,7 +51,7 @@ module.exports = function (app) {
     app.post("/api/posts", function (req, res) {
         // Add sequelize code for creating a post using req.body,
         // then return the result using res.json
-        db.create({
+        db.Post.create({
             title: req.body.title,
             body: req.body.body,
             category: req.body.category
@@ -65,7 +65,7 @@ module.exports = function (app) {
     app.delete("/api/posts/:id", function (req, res) {
         // Add sequelize code to delete a post where the id is equal to req.params.id, 
         // then return the result to the user using res.json
-        db.destroy({
+        db.Post.destroy({
             where: {
                 id: req.params.id
             }
@@ -78,7 +78,7 @@ module.exports = function (app) {
     app.put("/api/posts", function (req, res) {
         // Add code here to update a post using the values in req.body, where the id is equal to
         // req.body.id and return the result to the user using res.json
-        db.update({
+        db.Post.update(req.body, {
             where: {
                 id: req.body.id
             }
