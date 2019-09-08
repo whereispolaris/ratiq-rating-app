@@ -57,7 +57,7 @@ module.exports = function (app) {
             category: req.body.category
         }).then(dbPost => {
             res.json(dbPost);
-        })
+        });
 
     });
 
@@ -65,11 +65,23 @@ module.exports = function (app) {
     app.delete("/api/posts/:id", function (req, res) {
         // Add sequelize code to delete a post where the id is equal to req.params.id, 
         // then return the result to the user using res.json
+        db.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then(dbPost => {
+            res.json(dbPost);
+        })
     });
 
     // PUT route for updating posts
     app.put("/api/posts", function (req, res) {
         // Add code here to update a post using the values in req.body, where the id is equal to
         // req.body.id and return the result to the user using res.json
+        db.update({
+            where: {
+                id: req.body.id
+            }
+        })
     });
 };
