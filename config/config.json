@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "lb6hksl5fw4y6lxx",
-    "password": "px6jwcvdipw0exg8",
-    "database": "n4ofagrfpib8meyh",
-    "host": "otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "ratiq_users",
+    "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "lb6hksl5fw4y6lxx",
-    "password": "px6jwcvdipw0exg8",
-    "database": "n4ofagrfpib8meyh",
-    "host": "otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "ratiq_users",
+    "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
