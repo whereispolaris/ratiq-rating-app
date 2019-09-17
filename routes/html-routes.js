@@ -10,12 +10,12 @@ module.exports = function (app) {
 
     // index route loads Homepage
     app.get("/", function (req, res) {
-        res.sendFile(path.join("../public/index.html"));
+        res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
     // Route to the cms page
     app.get("/cms", function (req, res) {
-        res.sendFile(path.join("../public/cms.html"));
+        res.sendFile(path.join(__dirname, "../public/cms.html"));
     });
 
     // blog route loads blog.html
