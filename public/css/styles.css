@@ -1,21 +1,96 @@
-button.submit {
+/* 
+font-family: "Open Sans Condensed", sans-serif;
+font-family: "Abel", sans-serif;
+font-family: "Righteous", cursive;
+font-family: "Poiret One", cursive;
+font-family: "Unica One", cursive;
+font-family: "El Messiri", sans-serif;
+font-family: "Cormorant", serif;
+font-family: "Spinnaker", sans-serif;
+font-family: "Forum", cursive;
+font-family: "Syncopate", sans-serif;
+font-family: "Marcellus SC", serif;
+font-family: "Rosario", sans-serif;
+font-family: "Federo", sans-serif;
+font-family: "Cormorant SC", serif;
+*/
+
+body {
+  font-family: Montserrat, arial, sans-serif;
+  margin: 0px;
+  color: #808080;
+  height: 100vh;
+  background-image: linear-gradient(
+    to top,
+    #dad4ec 0%,
+    #dad4ec 1%,
+    #f3e7e9 100%
+  );
+}
+
+img.teamPic {
+  height: 150px;
+  width: 150px;
+}
+
+.team {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.teamBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* navbar */
+.nav-wrapper {
+  display: inline;
+  background-color: #f0e5e9;
+  font-family: "Montserrat", arial, sans-serif;
+  font-size: 20px;
+  color: #808080;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f2e7e9;
+}
+
+li {
   float: right;
 }
 
-form#cms {
-  margin-top: 50px;
+li a {
+  display: block;
+  color: #808080;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#cms textarea {
-  resize: none;
+li a:hover:not(.active) {
+  background-color: #f1ede6;
 }
 
-.card-header button.delete,
-button.edit {
-  float: right;
-  margin: 5px;
+.active {
+  background-color: #e6e0d9;
 }
 
-.top-30 {
-  margin-top: 30px;
+i {
+  color: #808080;
+}
+
+.aboutRatiq img {
+  width: 400px;
+  height: 250px;
 }
