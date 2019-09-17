@@ -9,7 +9,7 @@ $(function() {
 
   const userId = "Sonmi";
 
-  const ratingsRef = firebase.database().ref("/users/" + userId + "/ratings");
+  const ratingsRef = database.ref("/users/" + userId + "/ratings");
   ratingsRef.on("child_added", snapshot => {
     const { userName, rating, comment } = snapshot.val();
     $("#commentStream").prepend(
@@ -33,9 +33,10 @@ function onSubmit() {
   $("#submitRating")
     .serializeArray()
     .map(entry => (data[entry.name] = entry.value));
-
+  const ratedUserName = data.userName;
+  data.userName = userId;
   database
-    .ref("/users/" + data.userName)
+    .ref("/users/" + ratedUserName)
     .child("ratings")
     .push(data).key;
 
