@@ -1,6 +1,4 @@
-
-// *** Dependencies
-// =============================================================
+require('dotenv').config()
 var express = require("express");
 
 // Sets up the Express App
@@ -27,6 +25,8 @@ require("./routes/html-routes.js")(app);
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on PORT " + PORT + " env " + process.env.USERNAME);
+
   });
 });
+
