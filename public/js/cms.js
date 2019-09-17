@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Gets an optional query string from our url (i.e. ?post_id=23)
   var url = window.location.search;
   var postId;
@@ -48,14 +48,14 @@ $(document).ready(function() {
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
-    $.post("/api/posts/", Post, function() {
-      window.location.href = "/blog";
+    $.post("/api/posts/", Post, function () {
+      window.location.href = "/";
     });
   }
 
   // Gets post data for a post if we're editing
   function getPostData(id) {
-    $.get("/api/posts/" + id, function(data) {
+    $.get("/api/posts/" + id, function (data) {
       if (data) {
         // If this post exists, prefill our cms forms with its data
         titleInput.val(data.title);
@@ -75,7 +75,7 @@ $(document).ready(function() {
       url: "/api/posts",
       data: post
     })
-      .then(function() {
+      .then(function () {
         window.location.href = "/blog";
       });
   }
