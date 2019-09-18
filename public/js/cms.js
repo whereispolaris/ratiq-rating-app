@@ -18,13 +18,12 @@ $(document).ready(function () {
 
   // var postCategorySelect = $("#category");
 
+  // Sign Up Form ==================
   var cmsForm = $("#cms");
   var nameInput = $("#name");
   var emailInput = $("#email");
   var bioInput = $("#bio");
   var photoInput = $("#photo");
-
-
 
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", function handleFormSubmit(event) {
@@ -39,9 +38,6 @@ $(document).ready(function () {
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
-      // title: titleInput.val().trim(),
-      // body: bodyInput.val().trim(),
-      // category: postCategorySelect.val(),
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
       bio: bioInput.val().trim(),
@@ -61,10 +57,20 @@ $(document).ready(function () {
     }
   });
 
+
+  // Sign In Form ==================
+  var signUpForm = $("#signUpForm");
+  var emailSignIn = $("#emailSignIn");
+
+  $(signUpForm).on("submit", function handleSignIn(event) {
+    event.preventDefault();
+    document.cookie = emailSignIn.val().trim();
+    window.location.href = "/profile";
+  });
+
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
     $.post("/api/posts/", Post, function () {
-      console.log
       // window.location.href = "/";
 
     });
