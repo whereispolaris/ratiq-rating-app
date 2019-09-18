@@ -21,9 +21,21 @@ module.exports = function (sequelize, DataTypes) {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate: {
-      //   isAlpha: true
-      // }
+      validate: {
+        isAlpha: true
+      }
+    },
+    bio: {
+      type: DataTypes.STRING(160),
+      allowNull: false
+    },
+    rating: {
+      type: DataTypes.NUMBER,
+      allowNull: false
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   });
 
@@ -52,7 +64,6 @@ module.exports = function (sequelize, DataTypes) {
     bio: {
       type: DataTypes.STRING,
       allowNull: false,
-
     },
     rating: {
       type: DataTypes.NUMBER,

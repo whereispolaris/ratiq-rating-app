@@ -42,87 +42,104 @@
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-  <div class="profileHeader">
-    <h1 class="name">Sonmi C Beenz</h1>
-    <div id="totals"></div>
-  </div>
-
-  <div class="row">
-    <form id="submitRating" class="s12">
-      <div class="input-field  s6">
-        <input id="userName" type="text" name="userName" value="User to rate" />
-        <label for="userName">Rate:</label>
-      </div>
-
-      <select name="rating" class="stars">
-        <option value="1"></option>
-        <option value="2"></option>
-        <option value="3"></option>
-        <option value="4"></option>
-        <option value="5"></option>
-      </select>
-      <div class="row">
-        <div class="input-field  s6">
-          <input id="input_text" type="text" name="comment" data-length="10" />
-          <label for="input_text">Comment</label>
+  <div class="container">
+    <div class="navbar">
+      <nav>
+        <div className="nav-wrapper">
+          <ul>
+            <li>
+              <a className="active" href="/">
+                RATIQ
+              </a>
+            </li>
+            <li>
+              <a href="#">LOGIN / LOGOUT</a>
+            </li>
+            <li>
+              <a href="profile.html">PROFILE</a>
+            </li>
+            <li>
+              <a href="collapsible.html">ABOUT</a>
+            </li>
+          </ul>
         </div>
-        </script>
-        <div class="submit">
-          <button type="submit" class="btn submit" onclick="return onSubmit();">
-            Submit
-          </button>
-        </div>
-    </form>
-    </script>
-    <div>
-      <h3>Sonmi's comment stream</h3>
-      <div id="commentStream"></div>
+      </nav>
+    </div>
+    <div class="profileHeader">
+      <h1 class="name">Sonmi C Beenz</h1>
+      <div id="totals"></div>
     </div>
 
-    <!-- Linking Material Design BootstrapJS -->
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-      integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-      crossorigin="anonymous"></script>
+    <div class="row">
+      <form id="submitRating" class="s12">
+        <div class="input-field  s6">
+          <input id="userName" type="text" name="userName" value="User to rate" />
+          <label for="userName">Rate:</label>
+        </div>
 
-    <!-- Initializing Material Design Bootstrap -->
+        <select name="rating" class="stars">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+        </select>
+        <div class="row">
+          <div class="input-field  s6">
+            <input id="input_text" type="text" name="comment" data-length="10" />
+            <label for="input_text">Comment</label>
+          </div>
+          </script>
+          <div class="submit">
+            <button type="submit" class="btn submit" onclick="return onSubmit();">
+              Submit
+            </button>
+          </div>
+      </form>
+      </script>
+      <div>
+        <h3>Sonmi's comment stream</h3>
+        <div id="commentStream"></div>
+      </div>
 
-    <script>
-      //   $(document).ready(function() {
-      //     $("body").bootstrapMaterialDesign();
-      //   });
-      $(document).ready(function () {
-        $("input#input_text, textarea#textarea2").characterCounter();
-      });
-    </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+      <!-- Linking Material Design BootstrapJS -->
+      <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+      <!-- Initializing Material Design Bootstrap -->
+
+      <script>
+        //   $(document).ready(function() {
+        //     $("body").bootstrapMaterialDesign();
+        //   });
+        $(document).ready(function () {
+          $("input#input_text, textarea#textarea2").characterCounter();
+        });
+      </script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
 
-    <script>
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyBkKdrN9417Hym-iNqpJF0KIzQifA9HGYo",
-        authDomain: "ratiq-6e557.firebaseapp.com",
-        databaseURL: "https://ratiq-6e557.firebaseio.com",
-        projectId: "ratiq-6e557",
-        storageBucket: "ratiq-6e557.appspot.com",
-        messagingSenderId: "314100493028",
-        appId: "1:314100493028:web:df81e9a68d13f2d0f59af1"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      // Get a reference to the database service
-      const database = firebase.database();
-    </script>
+      <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBkKdrN9417Hym-iNqpJF0KIzQifA9HGYo",
+          authDomain: "ratiq-6e557.firebaseapp.com",
+          databaseURL: "https://ratiq-6e557.firebaseio.com",
+          projectId: "ratiq-6e557",
+          storageBucket: "ratiq-6e557.appspot.com",
+          messagingSenderId: "314100493028",
+          appId: "1:314100493028:web:df81e9a68d13f2d0f59af1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // Get a reference to the database service
+        const database = firebase.database();
+      </script>
 </body>
 
 </html>

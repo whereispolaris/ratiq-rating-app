@@ -19,8 +19,9 @@ $(document).ready(function () {
   var postCategorySelect = $("#category");
 
   const nameInput = $("#name");
-  // const photoInput = $("#photo");
-  // const ratingInput = $("#rating");
+  const bioInput = $("#bio");
+  const photoInput = $("#photo");
+  const ratingInput = $("#rating");
 
 
 
@@ -38,7 +39,10 @@ $(document).ready(function () {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
       category: postCategorySelect.val(),
-      name: nameInput.val().trim()
+      name: nameInput.val().trim(),
+      bio: bioInput.val().trim(),
+      rating: ratingInput.val().trim(),
+      photo: photoInput.val()
     };
 
     console.log(newPost);
@@ -57,8 +61,9 @@ $(document).ready(function () {
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
     $.post("/api/posts/", Post, function () {
-      console.log(Post);
+      console.log
       // window.location.href = "/";
+
     });
   }
 
@@ -71,6 +76,9 @@ $(document).ready(function () {
         bodyInput.val(data.body);
         postCategorySelect.val(data.category);
         nameInput.val(data.name);
+        bioInput.val(data.bio);
+        ratingInput.val(data.rating);
+        photoInput.val(data.photo)
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
