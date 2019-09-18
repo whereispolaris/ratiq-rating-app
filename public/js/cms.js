@@ -17,20 +17,32 @@ $(document).ready(function () {
   var titleInput = $("#title");
   var cmsForm = $("#cms");
   var postCategorySelect = $("#category");
+
+  const nameInput = $("#name");
+  const bioInput = $("#bio");
+  const photoInput = $("#photo");
+  const ratingInput = $("#rating");
+
+
+
   // Giving the postCategorySelect a default value
   postCategorySelect.val("Personal");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
     // Wont submit the post if we are missing a body or a title
-    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+    if (!titleInput.val().trim() || !bodyInput.val().trim() || !nameInput.val().trim()) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
       title: titleInput.val().trim(),
       body: bodyInput.val().trim(),
-      category: postCategorySelect.val()
+      category: postCategorySelect.val(),
+      name: nameInput.val().trim(),
+      bio: bioInput.val().trim(),
+      rating: ratingInput.val().trim(),
+      photo: photoInput.val()
     };
 
     console.log(newPost);
@@ -49,7 +61,9 @@ $(document).ready(function () {
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
     $.post("/api/posts/", Post, function () {
-      window.location.href = "/";
+      console.log
+      // window.location.href = "/";
+
     });
   }
 
@@ -61,6 +75,10 @@ $(document).ready(function () {
         titleInput.val(data.title);
         bodyInput.val(data.body);
         postCategorySelect.val(data.category);
+        nameInput.val(data.name);
+        bioInput.val(data.bio);
+        ratingInput.val(data.rating);
+        photoInput.val(data.photo)
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;

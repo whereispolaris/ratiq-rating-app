@@ -4,70 +4,76 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js">
-  <!--<![endif]-->
+<!--<![endif]-->
 
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Ratiq | Profile</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
-    <link
-      rel="stylesheet"
-      href="css/styles.css"
-      media="screen"
-      title="no title"
-    />
-    <!-- <link
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ratiq | Profile</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="" />
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" />
+  <!-- <link
     rel="stylesheet"
     href="css/reset.css"
     media="screen"
     title="no title"
   /> -->
-    <link rel="stylesheet" type="text/css" href="css/css-stars.css" />
-    <!-- Linking jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <!-- Linking jQuery UI-->
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="./js/jquery.barrating.min.js"></script>
-    <script src="./js/app.js" type="text/javascript"></script>
-    <!-- Linking Font Awesome 5 for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Abel|Cormorant|Cormorant+SC|El+Messiri|Federo|Forum|Marcellus+SC|Montserrat|Open+Sans+Condensed:300|Poiret+One|Poller+One|Rosario|Spinnaker|Syncopate|Thasadith|Unica+One|Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Linking Materialize -->
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+  <link rel="stylesheet" type="text/css" href="css/css-stars.css" />
+  <!-- Linking jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <!-- Linking jQuery UI-->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./js/jquery.barrating.min.js"></script>
+  <script src="./js/app.js" type="text/javascript"></script>
+  <!-- Linking Font Awesome 5 for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Abel|Cormorant|Cormorant+SC|El+Messiri|Federo|Forum|Marcellus+SC|Montserrat|Open+Sans+Condensed:300|Poiret+One|Poller+One|Rosario|Spinnaker|Syncopate|Thasadith|Unica+One|Montserrat&display=swap"
+    rel="stylesheet" />
+  <!-- Linking Materialize -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  </head>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
 
-  <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-    <h1>Sonmi's Profile Page</h1>
-    <div id="totals"></div>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <nav>
+        <div className="nav-wrapper">
+          <ul>
+            <li>
+              <a className="active" href="/">
+                RATIQ
+              </a>
+            </li>
+            <li>
+              <a href="#">LOGIN / LOGOUT</a>
+            </li>
+            <li>
+              <a href="profile.html">PROFILE</a>
+            </li>
+            <li>
+              <a href="collapsible.html">ABOUT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="profileHeader">
+      <h1 class="name">Sonmi C Beenz</h1>
+      <div id="totals"></div>
+    </div>
 
     <div class="row">
       <form id="submitRating" class="s12">
         <div class="input-field  s6">
-          <input id="userName" type="text" name="userName" value="Jacob" />
+          <input id="userName" type="text" name="userName" value="User to rate" />
           <label for="userName">Rate:</label>
         </div>
 
@@ -80,66 +86,60 @@
         </select>
         <div class="row">
           <div class="input-field  s6">
-            <input
-              id="input_text"
-              type="text"
-              name="comment"
-              data-length="10"
-            />
+            <input id="input_text" type="text" name="comment" data-length="10" />
             <label for="input_text">Comment</label>
           </div>
-        </div>
-        <div class="submit">
-          <button type="submit" class="btn submit" onclick="return onSubmit();">
-            Submit
-          </button>
-        </div>
+          </script>
+          <div class="submit">
+            <button type="submit" class="btn submit" onclick="return onSubmit();">
+              Submit
+            </button>
+          </div>
       </form>
-    </div>
-    <div>
-      <h3>Sonmi's comment stream</h3>
-      <div id="commentStream"></div>
-    </div>
+      </script>
+      <div>
+        <h3>Sonmi's comment stream</h3>
+        <div id="commentStream"></div>
+      </div>
 
-    <!-- Linking Material Design BootstrapJS -->
-    <script
-      src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
-      integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-      crossorigin="anonymous"
-    ></script>
+      <!-- Linking Material Design BootstrapJS -->
+      <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
 
-    <!-- Initializing Material Design Bootstrap -->
+      <!-- Initializing Material Design Bootstrap -->
 
-    <script>
-      //   $(document).ready(function() {
-      //     $("body").bootstrapMaterialDesign();
-      //   });
-      $(document).ready(function() {
-        $("input#input_text, textarea#textarea2").characterCounter();
-      });
-    </script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+      <script>
+        //   $(document).ready(function() {
+        //     $("body").bootstrapMaterialDesign();
+        //   });
+        $(document).ready(function () {
+          $("input#input_text, textarea#textarea2").characterCounter();
+        });
+      </script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+      <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-database.js"></script>
 
-    <script>
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyBkKdrN9417Hym-iNqpJF0KIzQifA9HGYo",
-        authDomain: "ratiq-6e557.firebaseapp.com",
-        databaseURL: "https://ratiq-6e557.firebaseio.com",
-        projectId: "ratiq-6e557",
-        storageBucket: "ratiq-6e557.appspot.com",
-        messagingSenderId: "314100493028",
-        appId: "1:314100493028:web:df81e9a68d13f2d0f59af1"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      // Get a reference to the database service
-      const database = firebase.database();
-    </script>
-  </body>
+      <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBkKdrN9417Hym-iNqpJF0KIzQifA9HGYo",
+          authDomain: "ratiq-6e557.firebaseapp.com",
+          databaseURL: "https://ratiq-6e557.firebaseio.com",
+          projectId: "ratiq-6e557",
+          storageBucket: "ratiq-6e557.appspot.com",
+          messagingSenderId: "314100493028",
+          appId: "1:314100493028:web:df81e9a68d13f2d0f59af1"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        // Get a reference to the database service
+        const database = firebase.database();
+      </script>
+</body>
+
 </html>
