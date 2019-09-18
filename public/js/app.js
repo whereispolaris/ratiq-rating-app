@@ -1,3 +1,5 @@
+const userId = "Sonmi";
+
 $(function() {
   $(".stars").barrating("show", {
     theme: "css-stars",
@@ -6,8 +8,6 @@ $(function() {
     showSelectedRating: false,
     allowEmpty: false
   });
-
-  const userId = "Sonmi";
 
   const ratingsRef = database.ref("/users/" + userId + "/ratings");
   ratingsRef.on("child_added", snapshot => {
@@ -34,13 +34,13 @@ function onSubmit() {
     .serializeArray()
     .map(entry => (data[entry.name] = entry.value));
   const ratedUserName = data.userName;
-  data.userName = userId;
+  data.userName = userId; // this is used as a rater's id here, also the owner of the profile page.
   database
     .ref("/users/" + ratedUserName)
     .child("ratings")
     .push(data).key;
 
-  const totalRef = database.ref("/users/" + data.userName + "/total");
+  const totalRef = database.ref("/users/" + ratedUserName + "/total");
   totalRef.transaction(function(currentTotal) {
     if (!currentTotal) {
       return {
