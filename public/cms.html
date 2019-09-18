@@ -22,6 +22,28 @@
       <div class="col-md-5 offset-md-3">
         <form id="cms">
           <div class="form-group">
+            <!-- 
+            - ID (primary key) -
+            - Name (string)
+            - Photo URL (string)
+            - Rating (number) 
+            - Last 3 Comments (Array of 3 Strings) FIREBASE
+            - Anything else ? (edited) 
+            -->
+
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name">
+
+            <label for="photo">Photo:</label>
+            <input type="file" class="form-control" id="photo">
+
+            <label for="rating">Rating:</label>
+            <input type="number" class="form-control" id="rating">
+
+            <label for="bio">Bio:</label>
+            <input type="text" class="form-control" id="text">
+
+            <!-- For Referrence -->
             <label for="title">Title:</label>
             <input type="text" class="form-control" id="title">
             <br />
@@ -36,6 +58,7 @@
               </select>
             </div>
             <br />
+            <!-- For Referrence -->
             <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
           </div>
         </form>
