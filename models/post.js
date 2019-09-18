@@ -30,7 +30,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     rating: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     photo: {
@@ -42,38 +42,3 @@ module.exports = function (sequelize, DataTypes) {
   // Don't forget to 'return' the post after defining
   return Post;
 };
-
-
-
-/*
-module.exports = function (sequelize, DataTypes) {
-  // Add code here to create a Post model
-  const Post = sequelize.define("User", {
-    // This model needs a title, a body, and a category
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isAlpha: true
-      }
-    },
-    photo: {
-      type: DataTypes.BLOB,
-      allowNull: true,
-    },
-    bio: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    rating: {
-      type: DataTypes.NUMBER,
-      defaultValue: "5",
-      allowNull: false
-    },
-  });
-
-  // Don't forget to 'return' the post after defining
-  return User;
-};
-
-*/
