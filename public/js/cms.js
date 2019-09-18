@@ -13,35 +13,38 @@ $(document).ready(function () {
   }
 
   // Getting jQuery references to the post body, title, form, and category select
-  var bodyInput = $("#body");
-  var titleInput = $("#title");
+  // var bodyInput = $("#body");
+  // var titleInput = $("#title");
+
+  // var postCategorySelect = $("#category");
+
   var cmsForm = $("#cms");
-  var postCategorySelect = $("#category");
-
-  const nameInput = $("#name");
-  const bioInput = $("#bio");
-  const photoInput = $("#photo");
-  const ratingInput = $("#rating");
+  var nameInput = $("#name");
+  var emailInput = $("#email");
+  var bioInput = $("#bio");
+  var photoInput = $("#photo");
 
 
 
-  // Giving the postCategorySelect a default value
-  postCategorySelect.val("Personal");
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
+    console.log(nameInput);
+    console.log(emailInput);
+    console.log(bioInput);
+    console.log(photoInput);
     // Wont submit the post if we are missing a body or a title
-    if (!titleInput.val().trim() || !bodyInput.val().trim() || !nameInput.val().trim()) {
+    if (!nameInput.val() || !emailInput.val() || !bioInput.val() || !photoInput.val()) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
-      title: titleInput.val().trim(),
-      body: bodyInput.val().trim(),
-      category: postCategorySelect.val(),
+      // title: titleInput.val().trim(),
+      // body: bodyInput.val().trim(),
+      // category: postCategorySelect.val(),
       name: nameInput.val().trim(),
+      email: emailInput.val().trim(),
       bio: bioInput.val().trim(),
-      rating: ratingInput.val().trim(),
       photo: photoInput.val()
     };
 
@@ -72,12 +75,9 @@ $(document).ready(function () {
     $.get("/api/posts/" + id, function (data) {
       if (data) {
         // If this post exists, prefill our cms forms with its data
-        titleInput.val(data.title);
-        bodyInput.val(data.body);
-        postCategorySelect.val(data.category);
         nameInput.val(data.name);
         bioInput.val(data.bio);
-        ratingInput.val(data.rating);
+        emailInput.val(data.email);
         photoInput.val(data.photo)
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
