@@ -1,7 +1,3 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
 // Dependencies
 // =============================================================
 
@@ -52,12 +48,9 @@ module.exports = function (app) {
         // Add sequelize code for creating a post using req.body,
         // then return the result using res.json
         db.Post.create({
-            title: req.body.title,
-            body: req.body.body,
-            category: req.body.category,
             name: req.body.name,
             bio: req.body.bio,
-            rating: req.body.rating,
+            email: req.body.email,
             photo: req.body.photo
 
         }).then(dbPost => {
