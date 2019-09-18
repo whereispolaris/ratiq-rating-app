@@ -291,16 +291,19 @@ hr {
 </div>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/action_page.php">
+    <form name="form1" class="modal-content" >
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="username"><b>User Name</b></label>
+        <input type="text" placeholder="Enter username" name="username" required>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Pasword" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
         <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
@@ -313,12 +316,14 @@ hr {
   
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <button id="submit" type="submit" class="signupbtn">submit</button>
+          <input onclick="ValidateEmail(document.form1.email)" id="submit" type="submit" value="Submit" class="signupbtn"/>
         </div>
+            
       </div>
-    </form>
+        </form>
   </div>
   
 <script src="signup.js"></script>
+
 </body>
-</html
+</html>
