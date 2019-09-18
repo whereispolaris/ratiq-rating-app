@@ -1,36 +1,47 @@
 /* 
-font-family: "Open Sans Condensed", sans-serif;
-font-family: "Abel", sans-serif;
-font-family: "Righteous", cursive;
-font-family: "Poiret One", cursive;
-font-family: "Unica One", cursive;
-font-family: "El Messiri", sans-serif;
-font-family: "Cormorant", serif;
-font-family: "Spinnaker", sans-serif;
-font-family: "Forum", cursive;
-font-family: "Syncopate", sans-serif;
-font-family: "Marcellus SC", serif;
-font-family: "Rosario", sans-serif;
-font-family: "Federo", sans-serif;
-font-family: "Cormorant SC", serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'El Messiri', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'Cormorant', serif;
+font-family: 'Yeseva One', cursive;
+font-family: 'Judson', serif;
 */
 
+html {
+  /* background: radial-gradient(circle farthest-side, #f3f2e5, #f8d5d6);
+  background-repeat: no-repeat; */
+}
 body {
-  font-family: Montserrat, arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0px;
   color: #808080;
-  height: 100vh;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to top,
     #dad4ec 0%,
     #dad4ec 1%,
     #f3e7e9 100%
-  );
+  ); */
+
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(248, 213, 214, 1) 0%,
+    rgba(243, 242, 229, 1) 90%
+  ); */
+
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(248, 213, 214, 1) 0%,
+    rgba(243, 242, 229, 1) 90%
+  ); */
+  background: radial-gradient(circle farthest-side, #f3f2e5, #f8d5d6);
+  background-repeat: no-repeat;
 }
 
 img.teamPic {
   height: 150px;
   width: 150px;
+  padding-bottom: 5%;
 }
 
 .team {
@@ -38,7 +49,6 @@ img.teamPic {
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   margin: 20px;
 }
@@ -49,52 +59,176 @@ img.teamPic {
   align-items: center;
 }
 
-/* navbar */
-.nav-wrapper {
-  display: inline;
-  background-color: #f0e5e9;
-  font-family: "Montserrat", arial, sans-serif;
-  font-size: 20px;
-  color: #808080;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #f2e7e9;
-}
-
-li {
-  float: right;
-}
-
-li a {
-  display: block;
-  color: #808080;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #f1ede6;
-}
-
-.active {
-  background-color: #e6e0d9;
-}
-
-i {
-  color: #808080;
-}
-
-.aboutRatiq img {
+.lacieRating {
   width: 400px;
   height: 250px;
 }
 
-.profileHeader{
-  
+.applogo {
+  height: 100vh;
+  vertical-align: middle !important;
+  display: table-cell;
+  padding-left: 10%;
+}
+.applogo span {
+  font-size: 140px;
+  font-family: "Montserrat", sans-serif !important;
+  color: #808080;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  display: inline-block;
+}
+
+.intro {
+}
+/* 
+.lacie {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+} */
+
+/* gradient text top to bottom */
+.starlogo {
+  font-size: 50px;
+  background: -webkit-linear-gradient(#eee, #ef8393);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* gradient text left to right */
+/* .starlogo {
+  font-size: 50px;
+  background: linear-gradient(to left, #fff 0%, #ef8393 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+/*/////////////// Navbar starts here ///////////////*/
+
+div.navbar {
+  margin: 0 auto;
+  padding-top: 4%;
+  text-align: right;
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+div.navbar a {
+  color: #808080;
+  text-decoration: none;
+  font: 20px;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+
+/* Top border go down and Left border appears */
+div.topLeftBorders a:before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 2px;
+  height: 0px;
+  background: #808080;
+  content: "";
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+div.topLeftBorders a:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: #808080;
+  content: "";
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+div.topLeftBorders a:hover:before {
+  height: 100%;
+}
+
+div.topLeftBorders a:hover:after {
+  opacity: 0;
+  top: 100%;
+}
+/*/////////////// Navbar ends ///////////////*/
+
+div.team img {
+  border-radius: 50%;
+}
+
+.aboutAppTitle,
+.aboutUsTitle {
+  font-size: 20px;
+}
+
+/* .aboutRatiq {
+  background-color: #f9faf6;
+} */
+
+.aboutRatiq,
+.aboutUsContainer {
+  padding-top: 5%;
+  font-weight: bold;
+}
+
+.aboutRatiq {
+  padding-bottom: 10%;
+}
+
+/* .aboutUsContainer {
+  background-color: #f9faf6;
+} */
+
+/* unvisited link */
+a:link {
+  color: #808080;
+}
+
+/* visited link */
+a:visited {
+  color: #808080;
+}
+
+/* mouse over link */
+a:hover {
+  color: #ef8393;
+}
+
+/* selected link */
+a:active {
+  color: #808080;
+}
+
+/* about us flex style starts here */
+
+.aboutRatiq-flex-grid {
+  display: flex;
+  justify-content: space-between;
+}
+.aboutRatiq-flex-grid .col {
+  width: 32%;
+}
+
+@media (max-width: 600px) {
+  .aboutRatiq-flex-grid {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
 }
