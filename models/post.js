@@ -1,9 +1,9 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   // Add code here to create a Post model
   const Post = sequelize.define("Post", {
     name: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: false
     },
     bio: {
       type: DataTypes.STRING(160),
@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     photo: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: true
     }
   });
 

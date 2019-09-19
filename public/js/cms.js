@@ -67,14 +67,14 @@ $(document).ready(function() {
 
   $(signUpForm).on("submit", function handleSignIn(event) {
     event.preventDefault();
-    document.cookie = emailSignIn.val().trim();
+    document.cookie = "email=" + emailSignIn.val().trim();
     window.location.href = "/profile.html";
   });
 
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
     $.post("/api/posts/", Post, function() {
-      // window.location.href = "/";
+      window.location.href = "/";
     });
   }
 
