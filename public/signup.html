@@ -88,7 +88,7 @@ input[type=submit]:hover {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  border: 2px solid #ddd;
+  border: 2px solid#EDB867;
   height: 175px;
 }
 
@@ -193,7 +193,7 @@ button:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
+  background-color: #EDB867;
   padding-top: 50px;
 }
 
@@ -201,7 +201,7 @@ button:hover {
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
+  border: 1px solid #EDB867;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -248,7 +248,7 @@ hr {
 <div class="container">
   <form action="/action_page.php">
     <div class="row">
-      <h2 style="text-align:center">Login with Social Media or Manually</h2>
+      <h2 style="text-align:center">Welcome to Rattiq</h2>
       <div class="vl">
         <span class="vl-innertext">or</span>
       </div>
@@ -291,19 +291,22 @@ hr {
 </div>
 <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    <form class="modal-content" action="/action_page.php">
+    <form name="form1" class="modal-content" >
       <div class="container">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
         <hr>
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="username"><b>User Name</b></label>
+        <input type="text" placeholder="Enter username" name="username" required>
   
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Pasword" name="psw" required>
+        <input type="password" placeholder="Enter Password" name="psw" required>
   
         <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+        <input type="password" placeholder="Repeat Password" name="pswrepeat" required>
         
         <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
@@ -313,12 +316,14 @@ hr {
   
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <button id="submit" type="submit" class="signupbtn">submit</button>
+          <input onclick="ValidateEmail(document.form1.email)" id="submit" type="submit" value="Submit" class="signupbtn"/>
         </div>
+            
       </div>
-    </form>
+        </form>
   </div>
   
-<script src="signup.js"></script>
+<script src="./js/signup.js"></script>
+
 </body>
-</html
+</html>
