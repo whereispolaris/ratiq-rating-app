@@ -163,13 +163,8 @@ div.topLeftBorders a:hover:after {
 }
 /*/////////////// Navbar ends ///////////////*/
 
-div.profileLeft img,
 div.team img {
   border-radius: 50%;
-}
-div.profileLeft img {
-  width: 200px;
-  height: 200px;
 }
 
 .aboutAppTitle,
@@ -242,28 +237,4 @@ a:active {
 .blog-container.carousel .carousel-item {
   width: 600px !important;
   background-color: transparent;
-}
-
-.profileHeader {
-  padding-top: 10%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-}
-.profileLeft {
-  width: 30%;
-}
-.profileRight {
-  width: 70%;
-}
-
-button.userGradeIcon {
-  margin-left: 2%;
-  padding-left: 1%;
-  padding-right: 1%;
-  background-color: #000;
-  border: none;
-  color: white;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 7%;
 }
