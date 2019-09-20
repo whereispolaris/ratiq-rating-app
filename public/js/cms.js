@@ -46,7 +46,8 @@ $(document).ready(function() {
       name: nameInput.val().trim(),
       email: emailInput.val().trim(),
       bio: bioInput.val().trim(),
-      photo: photoInput.val()
+      photo: photoInput.val(),
+      password:"hello123"
     };
 
     console.log(newPost);
