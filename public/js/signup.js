@@ -1,6 +1,4 @@
-
-    // Get the modal
-    var modal = document.getElementById('id01');
+var modal = document.getElementById('id01');
     
     // When the user clicks anywhere outside of the modal, close it
 function ValidateEmail(inputText)
@@ -36,8 +34,8 @@ function checkForm() {
       document.form1.username.focus();
       return false;
     }
-
-    if(document.form1.psw.value != "" && document.form1.psw.value == document.form1.psw-repeat.value) {
+console.log(document.form1.psw.value)
+    if(document.form1.psw.value != "" && document.form1.psw.value == document.form1.pswrepeat.value) {
       if(document.form1.psw.value.length < 6) {
         alert("Error: Password must contain at least six characters!");
         document.form1.psw.focus();
@@ -75,14 +73,3 @@ function checkForm() {
     alert("You entered a valid password: " + document.form1.psw.value);
     return true;
   }
-    //     //URL of the servr goes here, whatever routs takes in that info
-    //     $.post("/api/signup",
-    //     {
-    //     email:"",
-    //     password:""
-    //     },
-    //     function(data, status){
-    //       alert("Data: " + data + "\nStatus: " + status);
-    //     });
-    //   })
-    
