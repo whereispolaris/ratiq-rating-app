@@ -90,20 +90,20 @@ img.teamPic {
 } */
 
 /* gradient text top to bottom */
-.starlogo {
-  font-size: 50px;
-  background: -webkit-linear-gradient(#eee, #ef8393);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* gradient text left to right */
 /* .starlogo {
   font-size: 50px;
-  background: linear-gradient(to left, #fff 0%, #ef8393 100%);
+  background: -webkit-linear-gradient(#f3e0e0, #ef8393);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 } */
+
+/* gradient text left to right */
+.starlogo {
+  font-size: 70px;
+  background: linear-gradient(to left, #f5eeee 0%, #ef8393 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /*/////////////// Navbar starts here ///////////////*/
 
@@ -232,4 +232,9 @@ a:active {
 
 * {
   box-sizing: border-box;
+}
+
+.blog-container.carousel .carousel-item {
+  width: 600px !important;
+  background-color: transparent;
 }
