@@ -12,7 +12,6 @@
   <title>Ratiq | Profile</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="" />
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" />
   <!-- <link
     rel="stylesheet"
@@ -25,7 +24,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <!-- Linking jQuery UI-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/js.cookie-2.2.1.min.js"></script>
   <script src="./js/jquery.barrating.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>
   <script src="./js/app.js" type="text/javascript"></script>
   <!-- Linking Font Awesome 5 for icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -38,8 +40,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-  </script>
+
 </head>
 
 <body>
@@ -50,40 +51,24 @@
     <a href="./index.html">RATIQ</a>
   </div>
     <div class="profileHeader">
-      <h1 class="name">Sonmi C Beenz</h1>
+      <h1 class="loggedInUser"></h1>
       <div id="totals"></div>
     </div>
 
     <div class="row">
-      <form id="submitRating" class="s12">
-        <div class="input-field  s6">
-          <input id="userName" type="text" name="userName" value="User to rate" />
-          <label for="userName">Rate:</label>
-        </div>
-
-        <select name="rating" class="stars">
-          <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
-          <option value="4"></option>
-          <option value="5"></option>
-        </select>
-        <div class="row">
-          <div class="input-field  s6">
-            <input id="input_text" type="text" name="comment" data-length="10" />
-            <label for="input_text">Comment</label>
-          </div>
-          </script>
-          <div class="submit">
-            <button type="submit" class="btn submit" onclick="return onSubmit();">
-              Submit
-            </button>
-          </div>
-      </form>
+     
       </script>
       <div>
-        <h3>Sonmi's comment stream</h3>
+        <h3><span class="loggedInUser"></span>'s comment stream</h3>
         <div id="commentStream"></div>
+      </div>
+      <div class="container">
+          <h1>People To Rate</h1>
+  
+          <div class="blog-container carousel">
+            
+          </div>
+ 
       </div>
 
       <!-- Linking Material Design BootstrapJS -->
@@ -124,6 +109,10 @@
         // Get a reference to the database service
         const database = firebase.database();
       </script>
+
+    <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+    <script src="js/people-test.js" type="text/javascript"></script>
 </body>
 
 </html>
