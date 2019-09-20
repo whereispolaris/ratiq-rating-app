@@ -1,23 +1,22 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   // Add code here to create a Post model
   const Post = sequelize.define("Post", {
-    // This model needs a title, a body, and a category
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    body: {
+    name: {
       type: DataTypes.TEXT,
-      allowNull: false,
-      len: [1]
+      allowNull: false
     },
-    category: {
+    bio: {
+      type: DataTypes.STRING(160),
+      allowNull: false
+    },
+    email: {
       type: DataTypes.STRING,
-      defaultValue: "Personal"
+      allowNull: false
     },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   });
 
   // Don't forget to 'return' the post after defining

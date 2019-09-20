@@ -1,11 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "papa2010",
-    "database": "ratiq_users",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql"
+     "password": "root",
+     "database": "ratiq_users",
+     "host": "127.0.0.1",
+     "port": 3306,
+     "dialect": "mysql"
+   
   },
   "test": {
     "username": "root",

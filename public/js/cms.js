@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Gets an optional query string from our url (i.e. ?post_id=23)
   var url = window.location.search;
   var postId;
@@ -13,24 +13,40 @@ $(document).ready(function () {
   }
 
   // Getting jQuery references to the post body, title, form, and category select
-  var bodyInput = $("#body");
-  var titleInput = $("#title");
+  // var bodyInput = $("#body");
+  // var titleInput = $("#title");
+
+  // var postCategorySelect = $("#category");
+
+  // Sign Up Form ==================
   var cmsForm = $("#cms");
-  var postCategorySelect = $("#category");
-  // Giving the postCategorySelect a default value
-  postCategorySelect.val("Personal");
+  var nameInput = $("#name");
+  var emailInput = $("#email");
+  var bioInput = $("#bio");
+  var photoInput = $("#photo");
+
   // Adding an event listener for when the form is submitted
   $(cmsForm).on("submit", function handleFormSubmit(event) {
     event.preventDefault();
+    console.log(nameInput);
+    console.log(emailInput);
+    console.log(bioInput);
+    console.log(photoInput);
     // Wont submit the post if we are missing a body or a title
-    if (!titleInput.val().trim() || !bodyInput.val().trim()) {
+    if (
+      !nameInput.val() ||
+      !emailInput.val() ||
+      !bioInput.val() ||
+      !photoInput.val()
+    ) {
       return;
     }
     // Constructing a newPost object to hand to the database
     var newPost = {
-      title: titleInput.val().trim(),
-      body: bodyInput.val().trim(),
-      category: postCategorySelect.val()
+      name: nameInput.val().trim(),
+      email: emailInput.val().trim(),
+      bio: bioInput.val().trim(),
+      photo: photoInput.val()
     };
 
     console.log(newPost);
@@ -40,27 +56,37 @@ $(document).ready(function () {
     if (updating) {
       newPost.id = postId;
       updatePost(newPost);
-    }
-    else {
+    } else {
       submitPost(newPost);
     }
   });
 
+  // Sign In Form ==================
+  var signUpForm = $("#signUpForm");
+  var emailSignIn = $("#emailSignIn");
+
+  $(signUpForm).on("submit", function handleSignIn(event) {
+    event.preventDefault();
+    document.cookie = "email=" + emailSignIn.val().trim();
+    window.location.href = "/profile.html";
+  });
+
   // Submits a new post and brings user to blog page upon completion
   function submitPost(Post) {
-    $.post("/api/posts/", Post, function () {
+    $.post("/api/posts/", Post, function() {
       window.location.href = "/";
     });
   }
 
   // Gets post data for a post if we're editing
   function getPostData(id) {
-    $.get("/api/posts/" + id, function (data) {
+    $.get("/api/posts/" + id, function(data) {
       if (data) {
         // If this post exists, prefill our cms forms with its data
-        titleInput.val(data.title);
-        bodyInput.val(data.body);
-        postCategorySelect.val(data.category);
+        nameInput.val(data.name);
+        bioInput.val(data.bio);
+        emailInput.val(data.email);
+        photoInput.val(data.photo);
         // If we have a post with this id, set a flag for us to know to update the post
         // when we hit submit
         updating = true;
@@ -74,9 +100,8 @@ $(document).ready(function () {
       method: "PUT",
       url: "/api/posts",
       data: post
-    })
-      .then(function () {
-        window.location.href = "/blog";
-      });
+    }).then(function() {
+      window.location.href = "/blog";
+    });
   }
 });
