@@ -235,28 +235,11 @@ a:active {
   }
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-.blog-container.carousel .carousel-item {
-  width: 600px !important;
-  background-color: transparent;
-}
-
-.profileHeader {
-  padding-top: 10%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-}
-.profileLeft {
-  width: 30%;
-}
-.profileRight {
-  width: 70%;
-}
-
-button.userGradeIcon {
+.userGradeIcon {
   margin-left: 2%;
   padding-left: 1%;
   padding-right: 1%;
@@ -267,3 +250,43 @@ button.userGradeIcon {
   font-weight: bold;
   border-radius: 7%;
 }
+
+.mainContentsWrapper {
+  margin: auto !important;
+}
+
+.card,
+.blog-container,
+.blog-container.carousel .carousel-item {
+  width: 400px !important;
+  background-color: transparent;
+}
+
+.profileHeader {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+.profileLeft {
+  padding-right: 5%;
+}
+.profileRight {
+  flex-grow: 4;
+}
+
+.card-body p {
+  display: none;
+}
+
+#integerPart {
+  font-size: 50px;
+}
+#fractionalPart {
+  font-size: 30px;
+  vertical-align: bottom !important;
+}
+/* 
+.profileScoreRow{
+  display:grid;
+
+} */

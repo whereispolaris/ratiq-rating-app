@@ -41,7 +41,7 @@ $(document).ready(function() {
     newUserCard.addClass("carousel-item");
     var newUserCardHeading = $("<div>");
     newUserCardHeading.addClass("card-header");
-    var newUserTitle = $("<h2>");
+    var newUserTitle = $("<h4>");
     var newUserDate = $("<small>");
 
     var newUserCardBody = $("<div>");
@@ -60,7 +60,7 @@ $(document).ready(function() {
     newUserCard
       .append(
         $(`<form class="submitRating" class="s12">
-      <input id="userName" type="hidden" name="userName" value="${user.email}" />
+      <input id="userName" type="hidden" name="userName" value="${user.email}"/>
     <select name="rating" class="stars">
       <option value="1"></option>
       <option value="2"></option>
@@ -68,17 +68,17 @@ $(document).ready(function() {
       <option value="4"></option>
       <option value="5"></option>
     </select>
-    <div class="row">
+    <div class="row commentContainer" style="display:flex">
       <div class="input-field  s6">
         <input id="input_text" type="text" name="comment" data-length="10" />
         <label for="input_text">Comment</label>
       </div>
-      </script>
       <div class="submit">
-        <button type="submit" class="btn submit">
-          Submit
-        </button>
-      </div>
+      <button type="submit" class="btn submit">
+        Submit
+      </button>
+    </div>
+
   </form>`)
       )
       .on("submit", e => {

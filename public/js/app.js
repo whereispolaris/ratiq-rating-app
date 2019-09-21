@@ -19,7 +19,12 @@ if (userId) {
         return;
       }
       const { count, sum } = data;
-      $("#totals").text("Avg: " + sum / count + ", Count: " + count);
+      const getAvgScore = sum / count;
+      const mainScore = getAvgScore.toFixed(3).slice(0, 3);
+      const decimalScore = getAvgScore.toFixed(3).slice(3, 5);
+      $("#integerPart").text(mainScore);
+      $("#fractionalPart").text(decimalScore);
+      // $("#totals").text("Avg: " + sum / count + ", Count: " + count);
     });
   });
 
