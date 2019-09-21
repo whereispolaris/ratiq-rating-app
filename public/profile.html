@@ -50,27 +50,42 @@
     <a href="./cms.html">LOGIN / LOGOUT</a>
     <a href="./index.html">RATIQ</a>
   </div>
-    <div class="profileHeader">
-      <h1 class="loggedInUser"></h1>
-      <div id="totals"></div>
-    </div>
-
-    <div class="row">
-     
-      </script>
-      <div>
-        <h3><span class="loggedInUser"></span>'s comment stream</h3>
-        <div id="commentStream"></div>
-      </div>
-      <div class="container">
-          <h1>People To Rate</h1>
-  
-          <div class="blog-container carousel">
-            
+  <div class="mainContentsWrapper container">
+      <div class="profileHeader">
+          <div class="profileLeft">
+            <img src="./images/UserLacie.jpg" alt="" class="userPic">
           </div>
- 
-      </div>
-
+          <div class="profileRight">
+              <h1 class="loggedInUser"></h1>
+              <div class="profileScoreRow" style="display:flex">
+              <div id="totals" style="display:flex">
+                <div id="integerPart"></div>
+                <div id="fractionalPart" style="vertical-align: bottom"></div>
+              </div><button class="userGradeIcon">
+                  <div class="userGrade">PRIME</div>
+                  <div class="userGradeFixedText">USER</div>
+                </button>
+          </div>
+        </div>
+        </div>
+    
+        <div class="row">
+        
+          <div>
+            <h3><span class="loggedInUser"></span>'s comment stream</h3>
+            <div id="commentStream"></div>
+          </div>
+          <div class="peopleContainer">
+              <h3>People To Rate</h3>
+      
+              <div class="blog-container carousel">
+                
+              </div>
+     
+          </div>
+    
+  </div>
+   
       <!-- Linking Material Design BootstrapJS -->
       <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
         integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
