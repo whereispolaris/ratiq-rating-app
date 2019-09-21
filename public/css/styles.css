@@ -57,6 +57,7 @@ img.teamPic {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 10%;
 }
 
 .lacieRating {
@@ -167,9 +168,16 @@ div.team img {
   border-radius: 50%;
 }
 
-.aboutAppTitle,
+.aboutAppTitle {
+  font-size: 55px;
+  width: 70%;
+  margin: auto;
+  text-align: center;
+}
+
 .aboutUsTitle {
-  font-size: 20px;
+  font-size: 55px;
+  text-align: center;
 }
 
 /* .aboutRatiq {
@@ -180,10 +188,16 @@ div.team img {
 .aboutUsContainer {
   padding-top: 5%;
   font-weight: bold;
+  margin: auto;
+  width: 70%;
 }
 
 .aboutRatiq {
-  padding-bottom: 10%;
+  padding-bottom: 20%;
+}
+.AboutImages {
+  margin: auto;
+  text-align: center;
 }
 
 /* .aboutUsContainer {
@@ -215,12 +229,13 @@ a:active {
 .aboutRatiq-flex-grid {
   display: flex;
   justify-content: space-between;
+  margin: 20px;
 }
 .aboutRatiq-flex-grid .col {
-  width: 32%;
+  width: 50%;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   .aboutRatiq-flex-grid {
     display: block;
     .col {
@@ -228,7 +243,7 @@ a:active {
       margin: 0 0 10px 0;
     }
   }
-}
+} */
 
 * {
   box-sizing: border-box;
